@@ -20,11 +20,9 @@ jobs:
           python-version: 3.9 #install the python needed
       - name: execute py script # run the run.py to get the latest data
         run: |
-            mkdir -p data
-            cp synonyms.csv ./data/
             python -m pip install --upgrade pip
             pip install -r requirements.txt
-            python ./tools/csv_to_json.py ./data/synonyms.csv ./data/synonyms.json
+            python ./tools/csv_to_json.py ./synonyms.csv ./data/
       - name: upload artifacts
         uses: actions/upload-artifact@v3
         with:
