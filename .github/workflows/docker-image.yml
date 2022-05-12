@@ -22,7 +22,7 @@ jobs:
         run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
-            python ./tools/csv_to_json.py ./synonyms.csv ./data/
+            python ./tools/converter.py ./synonyms.csv ./data/
       - name: upload artifacts
         uses: actions/upload-artifact@v3
         with:
