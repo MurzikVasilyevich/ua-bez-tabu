@@ -23,6 +23,7 @@ jobs:
             mkdir -p data
             cp synonyms.csv ./data/
             python -m pip install --upgrade pip
+            pip install -r requirements.txt
             python ./tools/csv_to_json.py /data/synonyms.csv /data/synonyms.json
       - name: upload artifacts
         uses: actions/upload-artifact@v3
