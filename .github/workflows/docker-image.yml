@@ -1,0 +1,32 @@
+name: ocr_book_workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: first
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+            cp synonyms.csv /data/
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+            python ./tools/csv_to_json.py /data/synonyms.csv /data/synonyms.json
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ocr_book_data
+          path: data/
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
