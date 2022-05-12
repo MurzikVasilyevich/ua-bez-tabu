@@ -5,13 +5,17 @@
 Будь ласка, не соромтесь [надавати](https://github.com/MurzikVasilyevich/ua-bez-tabu/issues/new/choose) свої пропозиції щодо:
 - додавання термінів
 - форматів, яких вам не вистачає:
-  - JSON
+  - JSON - вже в наявності [synonyms.json](/data/synonyms.json)
   - REST
-  - XML
+  - XML - вже в наявності [synonyms.xml](/data/synonyms.xml)
 - категоризації
 - та ін.
 
-# Колонки
+# Про репозиторій
+Основна інформація знаходиться у файлі [synonyms.csv](./synonyms.csv). Цей файл є першоджерелом.
+Інформація у форматі JSON та XML знаходиться у теці [data](./data/).
+
+# Колонки файлу [synonyms.csv](./synonyms.csv)
 - group - група термінів
 - term - термін
 - synonym - синонім до терміну
@@ -19,6 +23,6 @@
 
 
 # ToDo
-- Переробити файл у формат JSON
+:heavy_check_mark: Переробити файл у формат JSON
 - Зробити бібліотеку Python
 - Зробити чатбот, що виводить синонім до терміну
