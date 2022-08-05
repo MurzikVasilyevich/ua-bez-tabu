@@ -17,6 +17,7 @@
 
 # Чатбот
 Посилання на бота: [Українська без табу](https://t.me/ua_bez_tabu_bot).
+
 ![image](https://user-images.githubusercontent.com/93987936/183085723-52b12bc2-2da3-448a-815f-5c8b46d553dc.png)
 
 # Колонки файлу [synonyms.csv](./synonyms.csv)
